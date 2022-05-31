@@ -37,7 +37,7 @@ function openModalWindow(event) {
   window.addEventListener('keydown', closeOnKeyEscape)
   function closeOnKeyEscape(event) {
       if(event.code === "Escape"){
-        lightBoxModal.close()
+        lightBoxModal.close(() => window.removeEventListener('keydown', closeOnKeyEscape))
       }
       window.removeEventListener('keydown', closeOnKeyEscape)
     }
