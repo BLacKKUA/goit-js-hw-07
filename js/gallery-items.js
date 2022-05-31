@@ -1,9 +1,9 @@
 export const galleryItems = [
   {
     preview:
-      'https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825__340.jpg',
+      'https://cdn.pixabay.com/photo/2022/05/13/20/01/african-lily-7194478_960_720.jpg',
     original:
-      'https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825_1280.jpg',
+      'https://cdn.pixabay.com/photo/2022/05/13/20/01/african-lily-7194478_960_720.jpg',
     description: 'Hokkaido Flower',
   },
   {

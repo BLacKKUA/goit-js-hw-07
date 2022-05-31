@@ -2,7 +2,6 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 const galleryRef = document.querySelector('.gallery')
-
 galleryRef.addEventListener('click', lockLink)
 galleryRef.addEventListener('click', getRefImage)
 
@@ -32,13 +31,12 @@ function getRefImage(event) {
 }
 
 function openModalWindow(event) {
-  const lightBoxModal = basicLightbox.create(`<img src="${event.target.dataset.source}" alt="Hokkaido Flower">`)
+  const lightBoxModal = basicLightbox.create(`<img src="${event.target.dataset.source}" alt="${event.target.alt}">`)
   lightBoxModal.show()
   window.addEventListener('keydown', closeOnKeyEscape)
   function closeOnKeyEscape(event) {
       if(event.code === "Escape"){
         lightBoxModal.close(() => window.removeEventListener('keydown', closeOnKeyEscape))
       }
-      window.removeEventListener('keydown', closeOnKeyEscape)
     }
 }
