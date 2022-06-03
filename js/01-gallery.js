@@ -25,6 +25,7 @@ function lockLinkWorks(event) {
 }
 
 function openModalPicture(event) {
+  if(event.target.className == "gallery__item" || event.target.className == "gallery__image" || event.target.className == "gallery__link"){
   const instance = basicLightbox.create(`
     <div class="modal">
         <img src="${event.target.dataset.source}" alt="${event.target.alt}">
@@ -46,4 +47,5 @@ function openModalPicture(event) {
       instance.close(() => window.removeEventListener('keydown', closeModalOnEscape))
     }
   }
+    }
 }
