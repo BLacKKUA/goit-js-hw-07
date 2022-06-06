@@ -30,21 +30,23 @@ function openModalPicture(event) {
     <div class="modal">
         <img src="${event.target.dataset.source}" alt="${event.target.alt}">
     </div>
-`)
+`, {
+    onShow: () => window.addEventListener('keydown', closeModalOnEscape),
+    onClose: () => window.removeEventListener('keydown', closeModalOnEscape)
+  })
   instance.show(() => {
-    window.addEventListener('keydown', closeModalOnEscape)
     const modal = document.querySelector('.basicLightbox--visible')
     modal.addEventListener('click', closeModalOnClick)
   })
   
   function closeModalOnEscape(event) {
     if (event.code == "Escape") {
-      instance.close(() => window.removeEventListener('keydown', closeModalOnEscape))
+      instance.close()
     }
   }
   function closeModalOnClick(event) {
     if (event.target.className == "basicLightbox--visible") {
-      instance.close(() => window.removeEventListener('keydown', closeModalOnEscape))
+      instance.close()
     }
   }
     }
